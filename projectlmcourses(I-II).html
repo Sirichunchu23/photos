@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <style>
+        /* Reset default styles */
+        body, h1, h2, a {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body background and text color */
+        body {
+            background-color: #003366;
+            color: #ffff;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Header styling */
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            color: #ffff;
+            margin-bottom: 20px;
+        }
+
+        /* Underline for header */
+        h1 u {
+            text-decoration: underline;
+            text-decoration-color: #3498db;
+        }
+
+        /* Styling for course list container */
+        #I-II {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling for each course heading */
+        h2 {
+            font-size: 1.5em;
+            margin: 15px 0;
+            color: #2c3e50;
+            cursor: pointer;
+        }
+
+        /* Link styling */
+        a {
+            color: #003366;
+            text-decoration: none;
+            position: relative;  /* Needed for the ::after pseudo-element */
+            transition: color 0.3s;  /* Smooth color transition */
+        }
+
+        /* Link hover effect */
+        a:hover {
+            color: #003366;
+        }
+
+        /* Underline animation */
+        a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px; /* Position the underline just below the text */
+            width: 0%;
+            height: 2px;
+            background-color: #003366;
+            transition: width 0.3s ease-in-out; /* Animate width change */
+        }
+
+        a:hover::after {
+            width: 100%;  /* On hover, the width expands to full width of the text */
+        }
+
+        /* Styling for numbering courses */
+        h2::before {
+            content: counter(course) ". ";
+            counter-increment: course;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        /* Counter for numbered list */
+        body {
+            counter-reset: course;
+        }
+
+        /* Styling for units (initially hidden) */
+        .units {
+            display: none;
+            margin-left: 20px;
+            color: #333;
+            background-color: #ecf0f1;
+            border-left: 4px solid #3498db;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1><u>Courses(I-II)</u></h1>
+        <div id="I-II">
+            <h2 onclick="toggleUnits('course1')"><a>Object-Oriented Programming Concepts using JAVA</a></h2>
+            <div class="units" id="course1">
+                <ul>
+                    <li><a href="https://docs.google.com/presentation/d/1qMpImxIkf7SYffXTtlYotGOMh5t1zV4l/edit?usp=drivesdk&ouid=100012595782083966816&rtpof=true&sd=true">Introduction to OOP</a></li>
+                    <li><a href="https://drive.google.com/file/d/1qNfyHgyL3HTdtALtNLGynIAUMiQD-Tiq/view?usp=drivesdk">Inheritance and Polymorphism</a></li>
+                    <li><a href="https://drive.google.com/file/d/1qWsSW3UvALy76ooKLm_Jfwq-UWo5ISFy/view?usp=drivesdk">Encapsulation and Abstraction</a></li>
+                    <li><a>Exception Handling</a></li>
+                    <li><a>File Handling in JAVA</a></li>
+                </ul>
+            </div>
+
+            <h2 onclick="toggleUnits('course2')"><a>Discrete Mathematics Structure</a></h2>
+            <div class="units" id="course2">
+                <ul>
+                    <li><a>Logic and Propositions</a></li>
+                    <li><a>Set Theory</a>></li>
+                    <li><a>Graph Theory</a></li>
+                    <li><a>Functions and Relations</a></li>
+                    <li><a>Boolean Algebra</a></li>
+                </ul>
+            </div>
+
+            <h2 onclick="toggleUnits('course3')"><a>Digital Logics</a></h2>
+            <div class="units" id="course3">
+                <ul>
+                    <li><a>Number Systems</a></li>
+                    <li><a>Boolean Algebra</a></li>
+                    <li><a>Combinational Logic Circuits</a></li>
+                    <li><a>Sequential Logic Circuits</a></li>
+                    <li><a>Flip Flops and Registers</a></li>
+                </ul>
+            </div>
+
+            <h2 onclick="toggleUnits('course4')"><a>Linear Algebra</a></h2>
+            <div class="units" id="course4">
+                <ul>
+                    <li><a>Vectors and Vector Spaces</a></li>
+                    <li><a>Matrix Operations</a></li>
+                    <li><a>Determinants</a></li>
+                    <li><a>Eigenvalues and Eigenvectors</a></li>
+                    <li><a>Linear Transformations</a></li>
+                    <li><a>Applications of Linear Algebra</a></li>
+                </ul>
+            </div>
+
+            <h2 onclick="toggleUnits('course5')"><a>Matrix</a></h2>
+            <div class="units" id="course5">
+                <ul>
+                    <li><a>Matrix Operations</a></li>
+                    <li><a>Determinants and Inverses</a></li>
+                    <li><a>Eigenvalues and Eigenvectors</a></li>
+                    <li><a>Linear Systems of Equations</a></li>
+                    <li><a>Diagonalization</a></li>
+                </ul>
+            </div>
+
+            <h2 onclick="toggleUnits('course6')"><a>Language Skills</a></h2>
+            <div class="units" id="course6">
+                <ul>
+                    <li><a>Effective Communication</a></li>
+                    <li><a>Writing Skills</a></li>
+                    <li><a>Reading Comprehension</a></li>
+                    <li><a>Listening Skills</a></li>
+                    <li><a>Presentation Skills</a></li>
+                    <li><a>Grammar and Vocabulary Building</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle the visibility of course units
+        function toggleUnits(courseId) {
+            var units = document.getElementById(courseId);
+            if (units.style.display === "none" || units.style.display === "") {
+                units.style.display = "block";
+            } else {
+                units.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

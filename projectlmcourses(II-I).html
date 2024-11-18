@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <style>
+        /* Reset default styles */
+        body, h1, h2, a {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body background and text color */
+        body {
+            background-color: #003366;
+            color: #ffff;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Header styling */
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            color: #ffff;
+            margin-bottom: 20px;
+        }
+
+        /* Underline for header */
+        h1 u {
+            text-decoration: underline;
+            text-decoration-color: #3498db;
+        }
+
+        /* Styling for course list container */
+        #II-I {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling for each course heading */
+        h2 {
+            font-size: 1.5em;
+            margin: 15px 0;
+            color: #2c3e50;
+            cursor: pointer;
+        }
+
+        /* Link styling */
+        a {
+            color: #003366;
+            text-decoration: none;
+            position: relative;  /* Needed for the ::after pseudo-element */
+            transition: color 0.3s;  /* Smooth color transition */
+        }
+
+        /* Link hover effect */
+        a:hover {
+            color: #003366;
+        }
+
+        /* Underline animation */
+        a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px; /* Position the underline just below the text */
+            width: 0%;
+            height: 2px;
+            background-color: #003366;
+            transition: width 0.3s ease-in-out; /* Animate width change */
+        }
+
+        a:hover::after {
+            width: 100%;  /* On hover, the width expands to full width of the text */
+        }
+
+        /* Styling for numbering courses */
+        h2::before {
+            content: counter(course) ". ";
+            counter-increment: course;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        /* Counter for numbered list */
+        body {
+            counter-reset: course;
+        }
+
+        /* Styling for units (initially hidden) */
+        .units {
+            display: none;
+            margin-left: 20px;
+            color: #333;
+            background-color: #ecf0f1;
+            border-left: 4px solid #3498db;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1><u>Courses(II-I)</u></h1>
+        <div id="II-I">
+            <h2 onclick="toggleUnits('course1')"><a>Data Structures</a></h2>
+            <div class="units" id="course1">
+                <ul>
+                    <li><a href="https://docs.google.com/presentation/d/1ov51IWwhKc5nUOmvyv_sel8or-bi9kaO/edit?usp=drivesdk&ouid=100012595782083966816&rtpof=true&sd=true">Arrays</a></li>
+                    <li><a href="https://drive.google.com/file/d/1p889FqF1V2B-JoQX02PI2_enOgG3weX9/view?usp=drivesdk">Searching and Sorting</a></li>
+                    <li><a href="https://docs.google.com/presentation/d/1owIe8Rg1K8gjOnnbQMdnuALDg8i1uoNz/edit?usp=drivesdk&ouid=100012595782083966816&rtpof=true&sd=true">Linked Lists</a></li>
+                    <li><a href="https://drive.google.com/file/d/1ox0RSsurrqnwYngroTjjzdyMkOiaaubF/view?usp=drivesdk">Stacks and Queues</a></li>
+                    <li><a href="https://drive.google.com/file/d/1p4ZKqUP8XtI7oFgg2Wbymx3LsBnDUDmT/view?usp=drivesdk">Graphs and trees</a></li>
+                </ul>
+            </div>
+
+            <h2 onclick="toggleUnits('course2')"><a>Artificial Intelligence and Machine Learning</a></h2>
+            <div class="units" id="course2">
+                <ul>
+                    <li><a href="https://docs.google.com/presentation/d/1pjLwuQ9MbmqER_mJHqVVKD756l_8TQ5G/edit?usp=drivesdk&ouid=100012595782083966816&rtpof=true&sd=true">Introduction to AI</a></li>
+                    <li><a href="https://drive.google.com/file/d/1plChkd8fzK6UTbj8wPWbAg3370wiFWsh/view?usp=drivesdk">Adversarial Search and Games</a></li>
+                    <li><a href="https://drive.google.com/file/d/1ppbql_xQzpbR9ZU3nrjorQWXcfAZv0tM/view?usp=drivesdk">Overview of Expert System</a></li>
+                    <li><a>Clustering</a></li>
+                    <li><a>Deep Learning</a></li>
+                </ul>
+            </div>
+
+            <h2 onclick="toggleUnits('course3')"><a>Operating Systems</a></h2>
+            <div class="units" id="course3">
+                <ul>
+                    <li><a href="https://docs.google.com/presentation/d/1pEXGho473PJKtB-fbFeuRu3fuOgXOi8B/edit?usp=drivesdk&ouid=100012595782083966816&rtpof=true&sd=true">Introduction to OS</a></li>
+                    <li><a href="https://docs.google.com/presentation/d/1pF3qtFUCz_OYaloX7BU27_AZcx5SrMp7/edit?usp=drivesdk&ouid=100012595782083966816&rtpof=true&sd=true">CPU Scheduling Algorithms</a></li>
+                    <li><a href="https://docs.google.com/presentation/d/1pI0ds5jFPWrlME4PWEp3V10TcvMAPWex/edit?usp=drivesdk&ouid=100012595782083966816&rtpof=true&sd=true">Deadlocks</a></li>
+                    <li><a href="https://docs.google.com/presentation/d/1pRGz1v4G95sAD69IVfJEwlF8GRTrWmUU/edit?usp=drivesdk&ouid=100012595782083966816&rtpof=true&sd=true">Page Replacement</a></li>
+                    <li><a href="https://docs.google.com/presentation/d/1ph1989z8d54ddIG0AxEIi5pttwW2J24Q/edit?usp=drivesdk&ouid=100012595782083966816&rtpof=true&sd=true">File Management</a></li>
+                </ul>
+            </div>
+
+            <h2 onclick="toggleUnits('course4')"><a>Human Computer Interface</a></h2>
+            <div class="units" id="course4">
+                <ul>
+                    <li><a href="https://docs.google.com/presentation/d/1pB81w8BMsLMsKfgfKalfxSvPkeyi7ONP/edit?usp=drivesdk&ouid=100012595782083966816&rtpof=true&sd=true">Introduction to Design Interfaces</a></li>
+                    <li><a href="https://docs.google.com/presentation/d/1p9pRFlUWn7quEwwTkwpI06F_HzOaAcoZ/edit?usp=drivesdk&ouid=100012595782083966816&rtpof=true&sd=true">User Experts</a></li>
+                    <li><a href="https://docs.google.com/presentation/d/1oOAaluZ35Qs1rLHYRe571cxTJDWc43om/edit?usp=drivesdk&ouid=100012595782083966816&rtpof=true&sd=true">UI/UX Designing</a></li>
+                    <li><a>Usability Testing</a></li>
+                    <li><a>Future Trends in HCI</a></li>
+                </ul>
+            </div>
+
+            <h2 onclick="toggleUnits('course5')"><a>Computer Networks</a></h2>
+            <div class="units" id="course5">
+                <ul>
+                    <li><a href="https://www.netacad.com/courses/ccna-introduction-networks?courseLang=en-US&instance_id=9ddcb0ca-503d-41a2-85d4-b4b46960e292" target="_blank">Online Course</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle the visibility of course units
+        function toggleUnits(courseId) {
+            var units = document.getElementById(courseId);
+            if (units.style.display === "none" || units.style.display === "") {
+                units.style.display = "block";
+            } else {
+                units.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
